@@ -6,7 +6,7 @@ from wtforms.fields.datetime import DateField
 from wtforms.validators import DataRequired, url
 from flask import Flask, abort, render_template, redirect, url_for, flash, request
 from flask_bootstrap import Bootstrap5
-from dotenv import load_dotenv  # Install: pip install python-dotenv
+# from dotenv import load_dotenv  # Install: pip install python-dotenv
 import os
 from flask import Flask, jsonify, render_template, request
 from flask_sqlalchemy import SQLAlchemy
@@ -15,7 +15,7 @@ from sqlalchemy import Integer, String, Boolean, DateTime, func
 
 from test_script import *
 
-load_dotenv()  # Load the .env file
+# load_dotenv()  # Load the .env file
 
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
@@ -93,4 +93,4 @@ def test():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
