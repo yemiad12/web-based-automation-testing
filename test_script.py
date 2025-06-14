@@ -1,6 +1,4 @@
 import os
-
-
 def test_script(scenario):
     import time
     from datetime import datetime
