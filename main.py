@@ -8,10 +8,10 @@ from flask import Flask, abort, render_template, redirect, url_for, flash, reque
 from flask_bootstrap import Bootstrap5
 # from dotenv import load_dotenv  # Install: pip install python-dotenv
 import os
-from flask import Flask, jsonify, render_template, request
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
-from sqlalchemy import Integer, String, Boolean, DateTime, func
+from flask import Flask, render_template, request
+# from flask_sqlalchemy import SQLAlchemy
+# from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+# from sqlalchemy import Integer, String, Boolean, DateTime, func
 
 from test_script import *
 
