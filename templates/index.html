@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Coffee and Wifi{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <div class="container">
+  <h1 class="display-4">🤖️ Online Web Application Testing 📓</h1>
+  <p class="lead">Want to automate the testing of your web applications?</p>
+  <hr class="my-4">
+  <p>To commence testing of your application, first select a test scenario.</p>
+  <a class="btn btn-warning btn-lg" href="{{ url_for('scope') }}" role="button">Show Me!</a>
+</div>
+    </div>
+
+{% endblock %}
