@@ -6,6 +6,8 @@ def test_script(scenario):
     from selenium.common.exceptions import NoSuchElementException
     from selenium.webdriver.common.by import By
     from selenium.webdriver.support.select import Select
+    from webdriver_manager.chrome import ChromeDriverManager
+    from selenium.webdriver.chrome.service import Service
 
     # BASE_PATH = "https://app.3gisltd.com"
     BASE_PATH = "https://app.staging.3gisltd.com"
@@ -26,7 +28,8 @@ def test_script(scenario):
 
     test_scope = scenario
     print(test_scope)
-    driver = webdriver.Chrome(options=chrome_options)
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(options=chrome_options, service=service)
     driver.maximize_window()
     time.sleep(5)
 
