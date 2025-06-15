@@ -8,6 +8,8 @@ def test_script(scenario):
     from selenium.webdriver.support.select import Select
     from webdriver_manager.chrome import ChromeDriverManager
     from selenium.webdriver.chrome.service import Service
+    from selenium.webdriver.chrome.options import Options
+
 
     # BASE_PATH = "https://app.3gisltd.com"
     BASE_PATH = "https://app.staging.3gisltd.com"
@@ -23,8 +25,10 @@ def test_script(scenario):
     NEW_BUYER_EMAIL = os.environ.get("NEW_BUYER_EMAIL")
     AT_PASSWORD = os.environ.get("AT_PASSWORD")
 
-    chrome_options = webdriver.ChromeOptions()
+    # chrome_options = webdriver.ChromeOptions()
+    chrome_options = Options()
     chrome_options.add_experimental_option("detach", True)
+    chrome_options.add_argument("--user-data-dir=/tmp/chrome-user-data")
 
     test_scope = scenario
     print(test_scope)
