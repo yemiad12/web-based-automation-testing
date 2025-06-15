@@ -9,6 +9,8 @@ def test_script(scenario):
     from webdriver_manager.chrome import ChromeDriverManager
     from selenium.webdriver.chrome.service import Service
     from selenium.webdriver.chrome.options import Options
+    import time
+    import datetime
 
 
     # BASE_PATH = "https://app.3gisltd.com"
@@ -25,10 +27,15 @@ def test_script(scenario):
     NEW_BUYER_EMAIL = os.environ.get("NEW_BUYER_EMAIL")
     AT_PASSWORD = os.environ.get("AT_PASSWORD")
 
+    # Generate a unique directory name
+    timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+    user_data_dir = f"/tmp/selenium_user_data_{timestamp}"
+
     # chrome_options = webdriver.ChromeOptions()
     chrome_options = Options()
     chrome_options.add_experimental_option("detach", True)
-    chrome_options.add_argument("--user-data-dir=/tmp/chrome-user-data")
+    chrome_options.add_argument(f"--user-data-dir={user_data_dir}")
+    # chrome_options.add_argument("--user-data-dir=/tmp/chrome-user-data")
     chrome_options.add_argument("--headless")  # Runs browser without GUI
     chrome_options.add_argument("--disable-gpu")  # Disables GPU acceleration
     chrome_options.add_argument("--no-sandbox")  # Necessary for environments like containers
