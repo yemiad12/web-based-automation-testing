@@ -37,9 +37,9 @@ def test_script(scenario):
     chrome_options.add_argument(f"--user-data-dir={user_data_dir}")
     # chrome_options.add_argument("--user-data-dir=/tmp/chrome-user-data")
     chrome_options.add_argument("--headless")  # Runs browser without GUI
-    chrome_options.add_argument("--disable-gpu")  # Disables GPU acceleration
-    chrome_options.add_argument("--no-sandbox")  # Necessary for environments like containers
-    chrome_options.add_argument("--disable-dev-shm-usage")  # Addresses shared memory issues
+    # chrome_options.add_argument("--disable-gpu")  # Disables GPU acceleration
+    # chrome_options.add_argument("--no-sandbox")  # Necessary for environments like containers
+    # chrome_options.add_argument("--disable-dev-shm-usage")  # Addresses shared memory issues
 
     test_scope = scenario
     print(test_scope)
