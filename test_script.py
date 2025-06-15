@@ -12,7 +12,6 @@ def test_script(scenario):
     import time
     import datetime
 
-
     # BASE_PATH = "https://app.3gisltd.com"
     BASE_PATH = "https://app.staging.3gisltd.com"
     # BASE_PATH = "https://apptest.3gisltd.com"
@@ -36,16 +35,18 @@ def test_script(scenario):
     chrome_options.add_experimental_option("detach", True)
     chrome_options.add_argument(f"--user-data-dir={user_data_dir}")
     # chrome_options.add_argument("--user-data-dir=/tmp/chrome-user-data")
-    chrome_options.add_argument("--headless")  # Runs browser without GUI
+    chrome_options.add_argument("--headless")  # Runs browser without GUI (LIVE)
     # chrome_options.add_argument("--disable-gpu")  # Disables GPU acceleration
     # chrome_options.add_argument("--no-sandbox")  # Necessary for environments like containers
     # chrome_options.add_argument("--disable-dev-shm-usage")  # Addresses shared memory issues
+    # If you need a specific window size:
+    chrome_options.add_argument("--window-size=1920,1080") #LIVE
 
     test_scope = scenario
     print(test_scope)
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(options=chrome_options, service=service)
-    driver.maximize_window()
+    # driver.maximize_window() # TEST
     time.sleep(5)
 
 
